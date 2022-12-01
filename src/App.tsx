@@ -17,10 +17,13 @@ function App() {
     const reminders = await ReminderService.getReminders();
     setReminders(reminders);
   };
+
   const removeReminder = (id: number) => {
     setReminders(reminders.filter((reminder) => reminder.id !== id));
   };
+  // const editReminder=(title:string)=>{
 
+  // }
   const addReminder = async (title: string) => {
     const newReminder = await ReminderService.addReminder(title);
     setReminders([newReminder, ...reminders]);
