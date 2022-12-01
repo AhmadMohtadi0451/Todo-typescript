@@ -5,6 +5,7 @@ import { useState } from "react";
 import ReminderService from "./Api/Data";
 import { useEffect } from "react";
 import ReminderForm from "./Components/ReminderForm";
+import Header from "./Components/Header";
 
 function App() {
   const [reminders, setReminders] = useState<Reminder[]>([]);
@@ -26,6 +27,7 @@ function App() {
   };
   return (
     <Grid>
+      <Header />
       <ReminderForm onAddReminder={addReminder} />
       <ReminderList onRemoveReminder={removeReminder} items={reminders} />
     </Grid>
