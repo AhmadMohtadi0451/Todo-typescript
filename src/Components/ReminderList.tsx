@@ -13,7 +13,7 @@ const ReminderList = ({ items, onRemoveReminder }: ReminderListProps) => {
   return (
     <Container maxWidth="xl">
       {items.map((item) => (
-        <Grid>
+        <Grid key={item.id}>
           <Grid
             sx={{
               display: "flex",
@@ -26,7 +26,6 @@ const ReminderList = ({ items, onRemoveReminder }: ReminderListProps) => {
               color: "black",
               m: "10px",
             }}
-            key={item.id}
           >
             <Grid sx={{ display: "flex", justifyContent: "center" }}>
               {item.title}
