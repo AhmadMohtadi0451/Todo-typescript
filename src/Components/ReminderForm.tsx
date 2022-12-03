@@ -14,6 +14,9 @@ function ReminderForm({ onAddReminder }: NewReminderProps): JSX.Element {
   const clearInput = () => {
     setTitle("");
   };
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
+  };
 
   const submitForm = (event: React.FormEvent) => {
     event.preventDefault();
@@ -24,14 +27,16 @@ function ReminderForm({ onAddReminder }: NewReminderProps): JSX.Element {
   return (
     <Container maxWidth="xl">
       <Grid padding="10px" width="100%">
-        <form>
+        <form onSubmit={submitForm}>
           <TextField
             fullWidth
             id="filled-basic"
             label="Add a task"
             variant="filled"
-            onChange={(event) => setTitle(event.target.value)}
-          ></TextField>
+            value={title}
+            type={"text"}
+            onChange={changeHandler}
+          />
 
           <Grid
             display="flex"
@@ -41,7 +46,6 @@ function ReminderForm({ onAddReminder }: NewReminderProps): JSX.Element {
             borderRadius="0 0 5px 5px "
             boxShadow=" rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;"
           >
-            {" "}
             <Button
               onClick={submitForm}
               sx={{

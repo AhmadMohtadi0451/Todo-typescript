@@ -7,6 +7,7 @@ import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutl
 interface ReminderListProps {
   items: Reminder[];
   onRemoveReminder: (id: number) => void;
+  // onEditReminder: (title: string) => void;
 }
 
 const ReminderList = ({ items, onRemoveReminder }: ReminderListProps) => {
