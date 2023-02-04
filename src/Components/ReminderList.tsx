@@ -33,14 +33,6 @@ const ReminderList = ({ items, onRemoveReminder }: ReminderListProps) => {
             </Grid>
 
             <Grid sx={{ display: "flex" }}>
-              <ModeEditOutlineOutlinedIcon
-                sx={{
-                  width: "20px",
-                  color: "rgb(37,100,207)",
-                  cursor: "pointer",
-                  mr: "10px",
-                }}
-              />
               <DeleteOutlinedIcon
                 onClick={() => onRemoveReminder(item.id)}
                 sx={{
